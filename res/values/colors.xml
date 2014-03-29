@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <color name="login_background">#C78D2A</color>
+    <color name="uady">#2D2558</color>
+</resources>
