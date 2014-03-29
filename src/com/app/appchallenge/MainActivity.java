@@ -13,19 +13,18 @@ import com.app.appchallenge.model.Hour;
 import com.app.appchallenge.model.Schedule;
 import com.app.appchallenge.model.Subject;
 import com.app.appchallenge.model.Suggestion;
-import com.app.appchallenge.model.User;
 
 public class MainActivity extends SherlockFragmentActivity implements
 		SubmitCallbacks {
 
 	public static final String INTENT_USER = "intent_user";
 
-	private static final String FRAG_TAG_SUBMIT_FRAGMENT = "frag_tag_submit_fragment";
-	private static final String FRAG_TAG_SUBMIT_LOADING_DIALOG = "frag_tag_submit_loading_dialog";
+//	private static final String FRAG_TAG_SUBMIT_FRAGMENT = "frag_tag_submit_fragment";
+//	private static final String FRAG_TAG_SUBMIT_LOADING_DIALOG = "frag_tag_submit_loading_dialog";
 
 	private TimePicker mBeginPicker;
 	private TimePicker mEndPicker;
-	private User mUser;
+//	private User mUser;
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

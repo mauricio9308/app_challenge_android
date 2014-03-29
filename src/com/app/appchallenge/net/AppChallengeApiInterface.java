@@ -1,10 +1,12 @@
 package com.app.appchallenge.net;
 
+import retrofit.Callback;
 import retrofit.client.Response;
 import retrofit.http.Field;
 import retrofit.http.FormUrlEncoded;
 import retrofit.http.POST;
 
+import com.app.appchallenge.model.Message;
 import com.app.appchallenge.model.Suggestion;
 
 public interface AppChallengeApiInterface {
@@ -15,5 +17,5 @@ public interface AppChallengeApiInterface {
 			@Field("hora_final") String mEndHour);
 	
 	@POST("/user/login")
-	Response login();
+	Response login( Callback<Message> cb );
 }

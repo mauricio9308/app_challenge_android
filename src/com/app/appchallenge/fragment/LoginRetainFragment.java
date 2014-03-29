@@ -1,5 +1,6 @@
 package com.app.appchallenge.fragment;
 
+import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
 import android.app.Activity;
@@ -7,11 +8,14 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.app.appchallenge.BuildConfig;
+import com.app.appchallenge.model.Message;
 import com.app.appchallenge.model.User;
 import com.app.appchallenge.net.AppChallengeApiInterface;
 import com.app.appchallenge.net.AppChallengeApiSingleton;
+import com.app.appchallenge.net.RestError;
 import com.app.appchallenge.utils.AsyncTaskUtils;
 
 /**
@@ -91,7 +95,23 @@ public class LoginRetainFragment extends Fragment {
 		protected Integer doInBackground(User... params) {
 			AppChallengeApiInterface apiInterface = AppChallengeApiSingleton.getApiInterfaceInstance( params[0] ); 
 			try{
-				Response response = apiInterface.login(); 
+				Response response = apiInterface.login(new Callback<Message>() {
+					
+					@Override
+					public void success(Message message, Response arg1) {
+						Toast.makeText( getActivity(), message.getMessage() , Toast.LENGTH_SHORT).show();
+					}
+					
+					@Override
+					public void failure(RetrofitError error) {
+						if (error.getResponse() != null) {
+					        RestError body = (RestError) error.getBodyAs(RestError.class);
+					        Log.d("Error", body + ""); 
+						}
+					}
+				}); 
+				
+				
 				return response.getStatus(); 
 			} catch ( RetrofitError e ){
 				if( BuildConfig.DEBUG ){

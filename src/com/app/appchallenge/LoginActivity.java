@@ -38,7 +38,7 @@ public class LoginActivity extends SherlockFragmentActivity implements
 		switch (view.getId()) {
 		case R.id.bttn_login:
 			goToMainActivity(); 
-//			tryLogin(mEdTxtUsername.getText().toString(), mEdTxtPassword.getText().toString());
+			tryLogin(mEdTxtUsername.getText().toString(), mEdTxtPassword.getText().toString());
 			break;
 		default:
 			throw new IllegalArgumentException("Invalid id");
