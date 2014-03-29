@@ -21,9 +21,9 @@ public class Subject implements Parcelable {
 	private Schedule[] mSchedules;
 
 	@SerializedName("situacion")
-	private int mSituation; 
+	private String mSituation; 
 	
-	public Subject(String name, String professor, Schedule[] schedules, int situacion) {
+	public Subject(String name, String professor, Schedule[] schedules, String situacion) {
 		mName = name;
 		mProfessor = professor;
 		mSchedules = schedules;
@@ -34,7 +34,7 @@ public class Subject implements Parcelable {
 		mName = in.readString();
 		mProfessor = in.readString();
 		mSchedules = (Schedule[]) in.createTypedArray( Schedule.CREATOR ); 
-		mSituation = in.readInt(); 
+		mSituation = in.readString(); 
 	}
 
 	/*
@@ -58,20 +58,8 @@ public class Subject implements Parcelable {
 		return mSchedules;
 	}
 	
-	public int getSituation() {
+	public String getSituation() {
 		return mSituation;
-	}
-	
-	
-	public String getSituationString(){
-		switch (mSituation) {
-		case 0:
-			return "Extraodinario";
-		case 1:
-			return "Ordinario";
-		default:
-			return null;
-		}
 	}
 
 	public static Parcelable.Creator<Subject> getCreator() {
@@ -83,7 +71,7 @@ public class Subject implements Parcelable {
 		dest.writeString(mName);
 		dest.writeString(mProfessor);
 		dest.writeTypedArray(mSchedules, 0);
-		dest.writeInt(mSituation); 
+		dest.writeString(mSituation); 
 	}
 
 	public static final Parcelable.Creator<Subject> CREATOR = new Parcelable.Creator<Subject>() {

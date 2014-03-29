@@ -33,7 +33,7 @@ public final class AppChallengeApiSingleton {
 
 			// We retrieve the saved url
 			// String api_url = AppChallengeApiBaseUrl.URL_API_BASE; //
-			SharedPreferencesUtils.getAddress(context);
+			String api_url = SharedPreferencesUtils.getAddress(context);
 			Log.d("TAG", api_url);
 
 			final RestAdapter restAdapter = new RestAdapter.Builder()

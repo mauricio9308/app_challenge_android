@@ -69,6 +69,9 @@ public class SubjectFragment extends SherlockFragment {
 		TextView professor = (TextView) view.findViewById(R.id.txtView_subject_professor); 
 		professor.setText( subject.getProfessor() );
 		
+		TextView situation = (TextView) view.findViewById(R.id.situation); 
+		situation.setText( subject.getSituation() ); 
+		
 		return view;
 	}
 	

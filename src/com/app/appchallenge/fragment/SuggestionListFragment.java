@@ -157,7 +157,8 @@ public class SuggestionListFragment extends SherlockFragment implements
 						.findViewById(R.id.txtView_subject_name);
 				holder.professor = (TextView) convertView
 						.findViewById(R.id.txtView_subject_professor);
-
+				holder.situation = (TextView) convertView.findViewById(R.id.txtView_subject_situation); 
+				
 				convertView.setTag(holder);
 			} else {
 				holder = (ViewHolder) convertView.getTag();
@@ -175,6 +176,7 @@ public class SuggestionListFragment extends SherlockFragment implements
 		 * */
 		class ViewHolder {
 			public TextView name;
+			public TextView situation; 
 			public TextView professor;
 		}
 
@@ -199,7 +201,7 @@ public class SuggestionListFragment extends SherlockFragment implements
 			}
 
 			Subject positionSubject = mSubjects[position];
-			headerHolder.text.setText(positionSubject.getSituationString());
+			headerHolder.text.setText(positionSubject.getSituation() );
 
 			return convertView;
 		}
@@ -218,7 +220,7 @@ public class SuggestionListFragment extends SherlockFragment implements
 		@Override
 		public long getHeaderId(int position) {
 			Subject positionSubject = mSubjects[position];
-			return positionSubject.getSituation();
+			return 1; 
 		}
 	}
 

@@ -23,7 +23,7 @@ public class ApiUserRequestInterceptor implements RequestInterceptor {
 		if (mUser != null) {
 			final String authorizationValue = encodeCredentialsForBasicAuthorization();
 			requestFacade.addHeader("Authorization", authorizationValue);
-		}
+		} 
 	}
 
 	private String encodeCredentialsForBasicAuthorization() {

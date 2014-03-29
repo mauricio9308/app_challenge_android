@@ -5,9 +5,7 @@ import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 
-import com.app.appchallenge.BuildConfig;
 import com.app.appchallenge.model.Hour;
 import com.app.appchallenge.model.Suggestion;
 import com.app.appchallenge.model.User;
@@ -98,12 +96,8 @@ public class SubmitRetainFragment extends Fragment {
 				Hour beginHour = ( Hour ) params[1]; 
 				Hour endHour = ( Hour ) params[2]; 
 				
-				return apiInterface.getSuggestion( beginHour.toString(), endHour.toString() ); 	
+				return apiInterface.getSuggestion( beginHour.toString(), endHour.toString() ); 
 			} catch ( RetrofitError e ){
-				if( BuildConfig.DEBUG ){
-					Log.d( TAG, "ERROR WHILE RECOVERING THE SUGGESTION:"+ e.getResponse().getReason() ); 
-					e.printStackTrace(); 
-				}
 				return null;
 			}
 		}
@@ -116,6 +110,5 @@ public class SubmitRetainFragment extends Fragment {
 			}
 		}
 	}
-
 	
 }
