@@ -5,6 +5,11 @@ import android.os.Parcelable;
 
 import com.google.gson.annotations.SerializedName;
 
+/**
+ * Representation of a subject in the system
+ * 
+ * @author Heisenbugs
+ * */
 public class Subject implements Parcelable {
 	@SerializedName("nombre")
 	private String mName;

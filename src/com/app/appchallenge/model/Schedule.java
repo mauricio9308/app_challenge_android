@@ -5,6 +5,11 @@ import android.os.Parcelable;
 
 import com.google.gson.annotations.SerializedName;
 
+/**
+ * Representation of a given schedule in the system 
+ * 
+ * @author Heisenbugs
+ * */
 public class Schedule implements Parcelable{
 
 	@SerializedName("id")

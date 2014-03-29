@@ -5,6 +5,11 @@ import android.os.Parcelable;
 
 import com.google.gson.annotations.SerializedName;
 
+/**
+ * Representation of the suggestion given by the system
+ * 
+ * @author Heisenbugs
+ * */
 public class Suggestion implements Parcelable{
 
 	@SerializedName("periodo")

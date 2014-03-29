@@ -5,6 +5,7 @@ import se.emilsjolander.stickylistheaders.StickyListHeadersListView;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,11 @@ import com.app.appchallenge.R;
 import com.app.appchallenge.model.Subject;
 import com.app.appchallenge.model.Suggestion;
 
+/**
+ * {@link Fragment} that list the given subjects by the service as recommendations 
+ * 
+ * @author Heisenbugs
+ * */
 public class SuggestionListFragment extends SherlockFragment implements
 		OnItemClickListener {
 
@@ -89,6 +95,8 @@ public class SuggestionListFragment extends SherlockFragment implements
 
 		mSuggestion = getSuggestionFromArgs();
 		
+		
+//		container.fin
 		SuggestionListAdapter adapter = new SuggestionListAdapter(
 				mSuggestion.getSubjects(), getActivity());
 
@@ -162,6 +170,9 @@ public class SuggestionListFragment extends SherlockFragment implements
 			return convertView;
 		}
 
+		/**
+		 * Part of the view holder pattern, holds the reference for the list given view
+		 * */
 		class ViewHolder {
 			public TextView name;
 			public TextView professor;
@@ -193,10 +204,17 @@ public class SuggestionListFragment extends SherlockFragment implements
 			return convertView;
 		}
 
+
+		/**
+		 * Part of the view holder pattern, holds the reference for the given header view
+		 * */
 		class HeaderHolder {
 			public TextView text;
 		}
 
+		/**
+		 * Gives an identifier for the given header section
+		 * */
 		@Override
 		public long getHeaderId(int position) {
 			Subject positionSubject = mSubjects[position];

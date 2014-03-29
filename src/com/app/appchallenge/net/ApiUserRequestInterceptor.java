@@ -1,10 +1,15 @@
 package com.app.appchallenge.net;
 
 import retrofit.RequestInterceptor;
-import android.util.Base64;
+import org.apache.commons.codec.binary.Base64;
 
 import com.app.appchallenge.model.User;
 
+/**
+ * Request interceptor part of the Retrofit API, that adds a header with a basic authorization
+ * 
+ * @author Heisenbugs
+ * */
 public class ApiUserRequestInterceptor implements RequestInterceptor {
 
 	private User mUser;
@@ -22,11 +27,9 @@ public class ApiUserRequestInterceptor implements RequestInterceptor {
 	}
 
 	private String encodeCredentialsForBasicAuthorization() {
-		final String userAndPassword = mUser.getUsername() + ":"
-				+ mUser.getPassword();
-		final int flags = 0;
-		return "Basic "
-				+ Base64.encodeToString(userAndPassword.getBytes(), flags);
+		final String userAndPassword = mUser.getUsername() + ":" + mUser.getPassword();
+		byte[] byteArray = Base64.encodeBase64(userAndPassword.getBytes());
+		return "Basic " + new String(byteArray);
 	}
 
 }

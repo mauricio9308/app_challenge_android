@@ -3,7 +3,9 @@
 
     <string name="app_name">AppChallenge</string>
     <string name="hello_world">Hello world!</string>
-
+    <string name="set">Ingresar</string>
+	<string name="ok">OK</string>
+    
     <!-- Activities -->
     <string name="main_activity">Selección de horario</string>
     <string name="suggestion_activity">Sugerencia de horario</string>
@@ -15,6 +17,9 @@
     <string name="bttn_login">Iniciar sesión</string>
     <string name="action_submit">Enviar datos</string>
     <string name="loging_in">Iniciando sesión&#8230;</string>
+    <string name="set_server_name">Ingresa la dirección del servidor</string>
+    <string name="server_address">http://</string>
+    
 
     <!-- Api errors -->
     <string name="error_no_connection">Imposible contactar al servicio</string>

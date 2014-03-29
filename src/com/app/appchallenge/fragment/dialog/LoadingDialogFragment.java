@@ -2,6 +2,7 @@ package com.app.appchallenge.fragment.dialog;
 
 import android.app.Dialog;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,11 @@ import android.widget.TextView;
 import com.actionbarsherlock.app.SherlockDialogFragment;
 import com.app.appchallenge.R;
 
+/**
+ * {@link DialogFragment} that gives feedback to the user about a loading process 
+ * 
+ * @author Heisenbugs
+ * */
 public class LoadingDialogFragment extends SherlockDialogFragment {
     
     private TextView mTxtMessage; 

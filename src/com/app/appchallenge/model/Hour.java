@@ -3,6 +3,11 @@ package com.app.appchallenge.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+/**
+ * Class that represents a given hour in the system 
+ * 
+ * @author Heisenbugs
+ * */
 public class Hour implements Parcelable{
 	
 	private int mHour; 

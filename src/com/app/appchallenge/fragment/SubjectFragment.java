@@ -1,6 +1,7 @@
 package com.app.appchallenge.fragment;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +16,7 @@ import com.app.appchallenge.model.Schedule;
 import com.app.appchallenge.model.Subject;
 
 /**
- * Fragment that lists the schedule of a given subject
+ * {@link Fragment} that lists the schedule of a given subject
  * 
  * @author Heisenbugs
  * */

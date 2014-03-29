@@ -13,7 +13,6 @@ import com.app.appchallenge.model.Suggestion;
 import com.app.appchallenge.model.User;
 import com.app.appchallenge.net.AppChallengeApiInterface;
 import com.app.appchallenge.net.AppChallengeApiSingleton;
-import com.app.appchallenge.utils.AsyncTaskUtils;
 
 /**
  * Retain Fragment class that we use to encapsulate the petition of suggestion a new Suggestion made by an AsyncTask
@@ -59,7 +58,7 @@ public class SubmitRetainFragment extends Fragment {
 		setRetainInstance( true );
 		
 		if( savedInstanceState == null ){
-			AsyncTaskUtils.executeAsyncTask(new SubmitTask( ), new Object[]{ getUserFromArgs(), getBeginHourFromArgs(), getEndHourFromArgs() }); 
+			new SubmitTask( ).execute( new Object[]{ getUserFromArgs(), getBeginHourFromArgs(), getEndHourFromArgs() } ); 
 		} 
 	}
 	
@@ -94,7 +93,7 @@ public class SubmitRetainFragment extends Fragment {
 		@Override
 		protected Suggestion doInBackground(Object... params) {
 			try{
-				AppChallengeApiInterface apiInterface = AppChallengeApiSingleton.getApiInterfaceInstance( (User)params[0] ); 
+				AppChallengeApiInterface apiInterface = AppChallengeApiSingleton.getApiInterfaceInstance( (User)params[0], getActivity() ); 
 				
 				Hour beginHour = ( Hour ) params[1]; 
 				Hour endHour = ( Hour ) params[2]; 
@@ -103,6 +102,7 @@ public class SubmitRetainFragment extends Fragment {
 			} catch ( RetrofitError e ){
 				if( BuildConfig.DEBUG ){
 					Log.d( TAG, "ERROR WHILE RECOVERING THE SUGGESTION:"+ e.getResponse().getReason() ); 
+					e.printStackTrace(); 
 				}
 				return null;
 			}

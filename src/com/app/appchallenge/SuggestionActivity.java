@@ -1,5 +1,6 @@
 package com.app.appchallenge;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentManager.OnBackStackChangedListener;
@@ -11,6 +12,11 @@ import com.app.appchallenge.fragment.SuggestionListFragment.SuggestionListCallba
 import com.app.appchallenge.model.Subject;
 import com.app.appchallenge.model.Suggestion;
 
+/**
+ * {@link Activity} that contains the fragments {@link SuggestionListFragment} and {@link SubjectFragment} interactions. 
+ * 
+ * @author Heisenbugs
+ * */
 public class SuggestionActivity extends SherlockFragmentActivity implements
 		SuggestionListCallbacks, OnBackStackChangedListener {
 
@@ -19,6 +25,7 @@ public class SuggestionActivity extends SherlockFragmentActivity implements
 	private static final String FRAG_TAG_SUGGESTION_LIST = "frag_tag_suggestion_list";
 	private static final String FRAG_TAG_SUBJECT = "frag_tag_subject";
 
+	@Override
 	public void onCreate( Bundle savedInstanceState ) {
 		super.onCreate( savedInstanceState ); 
 
@@ -42,6 +49,12 @@ public class SuggestionActivity extends SherlockFragmentActivity implements
         }
     }
 
+	
+	/**
+	 * Part of the {@link SuggestionListCallbacks} it sends the user to the detailed information of the given subject
+	 * 
+	 * @param position of the subject in the list
+	 * */
 	@Override
 	public void onSubjectClick(int subjectPosition) {
 		Subject selectedSubject = getSelectedSubject(subjectPosition);
@@ -53,7 +66,12 @@ public class SuggestionActivity extends SherlockFragmentActivity implements
 				.add(android.R.id.content, subjectFragment, FRAG_TAG_SUBJECT)
 				.addToBackStack(FRAG_TAG_SUBJECT).commit();
 	}
-
+	
+	/**
+	 * Method that retrieves the {@link Subject} from the given position of the suggestions array
+	 * 
+	 * @param The subject at the given position
+	 * */
 	private Subject getSelectedSubject(int selectedPosition) {
 		Suggestion suggestion = (Suggestion) getIntent().getParcelableExtra(
 				INTENT_SUGGESTION);

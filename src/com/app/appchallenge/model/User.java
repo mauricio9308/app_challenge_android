@@ -3,6 +3,12 @@ package com.app.appchallenge.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+
+/**
+ * Representation of the user information in the Mobile App
+ * 
+ * @author Heisenbugs
+ * */
 public class User implements Parcelable {
 
 	private final String mUsername;
