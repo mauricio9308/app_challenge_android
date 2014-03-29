@@ -61,9 +61,9 @@ public class Subject implements Parcelable {
 	public String getSituationString(){
 		switch (mSituation) {
 		case 0:
-			return "Reprobado";
+			return "Extraodinario";
 		case 1:
-			return "Aprobado";
+			return "Ordinario";
 		default:
 			return null;
 		}

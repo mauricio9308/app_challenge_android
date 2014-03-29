@@ -16,7 +16,10 @@ import com.app.appchallenge.net.AppChallengeApiSingleton;
 import com.app.appchallenge.utils.AsyncTaskUtils;
 
 /**
- * Simple retaint fragment for protecting the asynctask from configuration changes
+ * Retain Fragment class that we use to encapsulate the petition of suggestion a new Suggestion made by an AsyncTask
+ * from configuration changes 
+ * 
+ * @author Heisenbugs 
  * */
 public class SubmitRetainFragment extends Fragment {
 
@@ -83,6 +86,9 @@ public class SubmitRetainFragment extends Fragment {
 		return getArguments().getParcelable(FRAG_ARG_END_HOUR); 
 	}
 	
+	/**
+	 * AsyncTask that realizes the petition to get the proper suggestion via the user credentials. 
+	 * */
 	public class SubmitTask extends AsyncTask<Object, Void, Suggestion>{
 		
 		@Override

@@ -5,7 +5,6 @@ import se.emilsjolander.stickylistheaders.StickyListHeadersListView;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -105,6 +104,11 @@ public class SuggestionListFragment extends SherlockFragment implements
 		mCallback.onSubjectClick(position);
 	}
 
+	/**
+	 * Base adapter for the suggestion list of the SuggestionListFragment
+	 * 
+	 * @author Heisenbugs
+	 * */
 	public class SuggestionListAdapter extends BaseAdapter implements
 			StickyListHeadersAdapter {
 

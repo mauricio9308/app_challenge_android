@@ -15,7 +15,10 @@ import com.app.appchallenge.net.AppChallengeApiSingleton;
 import com.app.appchallenge.utils.AsyncTaskUtils;
 
 /**
- * Simple retaint fragment for protecting the asynctask from configuration changes
+ * Retain Fragment class that we use to encapsulate the login petition made by an AsyncTask
+ * from configuration changes 
+ * 
+ * @author Heisenbugs 
  * */
 public class LoginRetainFragment extends Fragment {
 
@@ -76,6 +79,12 @@ public class LoginRetainFragment extends Fragment {
 		return getArguments().getParcelable(FRAG_ARG_USER); 
 	}
 	
+	/**
+	 * AsycnTask that makes the login petition via the application RestModule
+	 * 
+	 * @Param User The object that carries the user data
+	 * @return Simple response code that it's going to be processed by the proper Activity
+	 * */
 	public class LoginTask extends AsyncTask<User, Void, Integer>{
 		
 		@Override

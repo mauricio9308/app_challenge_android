@@ -14,6 +14,11 @@ import com.app.appchallenge.R;
 import com.app.appchallenge.model.Schedule;
 import com.app.appchallenge.model.Subject;
 
+/**
+ * Fragment that lists the schedule of a given subject
+ * 
+ * @author Heisenbugs
+ * */
 public class SubjectFragment extends SherlockFragment {
 
 	private static final String FRAG_ARG_SUBJECT = "frag_arg_subject";
@@ -67,6 +72,11 @@ public class SubjectFragment extends SherlockFragment {
 	}
 	
 
+	/**
+	 * Base adapter for the schedule list of the SubjectFragment
+	 * 
+	 * @author Heisenbugs
+	 * */
 	public class SchedulesAdapter extends BaseAdapter {
 
 		private final Schedule[] mSchedule;
