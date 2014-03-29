@@ -14,13 +14,36 @@
     </style>
 
     <style name="MyTheme.ActionBarStyle" parent="@style/Widget.Sherlock.Light.ActionBar.Solid">
-        <item name="background">#000000</item>
+        <item name="background">@color/uady</item>
         <item name="titleTextStyle">@style/MyTheme.ActionBar.Text</item>
+        <item name="android:buttonStyle">@style/ButtonAppTheme</item>
+        <item name="android:imageButtonStyle">@style/ImageButtonAppTheme</item>
     </style>
 
     <style name="MyTheme.ActionBar.Text" parent="@android:style/TextAppearance">
         <item name="android:textColor">@android:color/white</item>
     </style>
 
+    <style name="ButtonAppTheme" parent="android:Widget.Button">
+        <item name="android:background">@drawable/apptheme_btn_default_holo_light</item>
+        <item name="android:minHeight">48dip</item>
+        <item name="android:minWidth">64dip</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="ImageButtonAppTheme" parent="android:Widget.ImageButton">
+        <item name="android:background">@drawable/apptheme_btn_default_holo_light</item>
+    </style>
+
+    <style name="SeparatorStyle.Horizontal.Title">
+        <item name="android:background">@color/uady</item>
+    </style>
+
+    <style name="SeparatorStyle.Horizontal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+    </style>
+
+    <style name="SeparatorStyle" />
 
 </resources>

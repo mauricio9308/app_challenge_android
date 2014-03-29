@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
     android:orientation="vertical"
     android:padding="16dp" >
 
@@ -10,8 +11,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="left"
-        android:textSize="@dimen/text_size_medium" 
-        android:text="@string/professor"/>
+        android:text="@string/professor"
+        android:textSize="@dimen/text_size_medium" />
 
     <TextView
         android:id="@+id/txtView_subject_professor"
@@ -19,6 +20,14 @@
         android:layout_height="wrap_content"
         android:layout_gravity="right"
         android:textColor="@android:color/darker_gray"
+        android:textSize="@dimen/text_size_medium" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginTop="8dp"
+        android:text="@string/schedule"
         android:textSize="@dimen/text_size_medium" />
 
     <TextView

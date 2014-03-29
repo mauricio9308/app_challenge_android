@@ -37,6 +37,7 @@
     <string name="iam">IAM:</string>
 
     <!-- Subject detail fragment -->
-    <string name="professor">Profesor:</string>
+    <string name="professor">Profesor</string>
+    <string name="schedule">Horario</string>
 
 </resources>

@@ -26,8 +26,6 @@ public class LoginActivity extends SherlockFragmentActivity implements
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
-		
-		getSupportActionBar().setTitle("Sugerencia de Carga");
 
 		mEdTxtPassword = (EditText) findViewById(R.id.editTxt_password);
 		mEdTxtUsername = (EditText) findViewById(R.id.editTxt_username);

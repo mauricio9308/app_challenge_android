@@ -1,17 +1,19 @@
 package com.app.appchallenge.fragment;
 
+import se.emilsjolander.stickylistheaders.StickyListHeadersAdapter;
+import se.emilsjolander.stickylistheaders.StickyListHeadersListView;
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
 
-import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockFragment;
 import com.app.appchallenge.R;
 import com.app.appchallenge.model.Subject;
@@ -68,26 +70,28 @@ public class SuggestionListFragment extends SherlockFragment implements
 	}
 
 	@Override
-	public void onCreate( Bundle savedInstanceState ){
-		super.onCreate(savedInstanceState); 
-		
-		getSherlockActivity().getSupportActionBar().setTitle( getActivity().getString( R.string.suggestion_fragment_title ) );
-	} 
-	
-	
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		getSherlockActivity().getSupportActionBar().setTitle(
+				getActivity().getString(R.string.suggestion_fragment_title));
+	}
+
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 
+		
+		
 		View view = inflater.inflate(R.layout.fragment_suggestion, container,
 				false/* attachToRoot */);
 
-		ListView suggestionList = (ListView) view
+		StickyListHeadersListView suggestionList = (StickyListHeadersListView) view
 				.findViewById(android.R.id.list);
 
 		mSuggestion = getSuggestionFromArgs();
+		
 		SuggestionListAdapter adapter = new SuggestionListAdapter(
-				mSuggestion.getSubjects());
+				mSuggestion.getSubjects(), getActivity());
 
 		suggestionList.setAdapter(adapter);
 		suggestionList.setOnItemClickListener(SuggestionListFragment.this);
@@ -98,15 +102,18 @@ public class SuggestionListFragment extends SherlockFragment implements
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position,
 			long id) {
-		mCallback.onSubjectClick(position); 
+		mCallback.onSubjectClick(position);
 	}
 
-	public class SuggestionListAdapter extends BaseAdapter {
+	public class SuggestionListAdapter extends BaseAdapter implements
+			StickyListHeadersAdapter {
 
+		private final LayoutInflater mInflater;
 		private final Subject[] mSubjects;
 
-		public SuggestionListAdapter(Subject[] subjects) {
+		public SuggestionListAdapter(Subject[] subjects, Context context) {
 			mSubjects = subjects;
+			mInflater = LayoutInflater.from(context);
 		}
 
 		@Override
@@ -134,9 +141,9 @@ public class SuggestionListFragment extends SherlockFragment implements
 						.inflate(R.layout.list_item_subject, parent, false /* attachToRoot */);
 				holder = new ViewHolder();
 
-				holder.mName = (TextView) convertView
+				holder.name = (TextView) convertView
 						.findViewById(R.id.txtView_subject_name);
-				holder.mProfessor = (TextView) convertView
+				holder.professor = (TextView) convertView
 						.findViewById(R.id.txtView_subject_professor);
 
 				convertView.setTag(holder);
@@ -145,15 +152,51 @@ public class SuggestionListFragment extends SherlockFragment implements
 			}
 
 			final Subject positionSubject = mSubjects[position];
-			holder.mName.setText(positionSubject.getName());
-			holder.mProfessor.setText(positionSubject.getProfessor());
+			holder.name.setText(positionSubject.getName());
+			holder.professor.setText(positionSubject.getProfessor());
 
 			return convertView;
 		}
 
 		class ViewHolder {
-			public TextView mName;
-			public TextView mProfessor;
+			public TextView name;
+			public TextView professor;
+		}
+
+		@Override
+		public View getHeaderView(int position, View convertView,
+				ViewGroup parent) {
+
+			final HeaderHolder headerHolder;
+			if (convertView == null) {
+
+				convertView = mInflater.inflate(R.layout.header_events, parent,
+						false /* attachToRoot */);
+
+				headerHolder = new HeaderHolder();
+				headerHolder.text = (TextView) convertView
+						.findViewById(android.R.id.text1);
+
+				convertView.setTag(headerHolder);
+
+			} else {
+				headerHolder = (HeaderHolder) convertView.getTag();
+			}
+
+			Subject positionSubject = mSubjects[position];
+			headerHolder.text.setText(positionSubject.getSituationString());
+
+			return convertView;
+		}
+
+		class HeaderHolder {
+			public TextView text;
+		}
+
+		@Override
+		public long getHeaderId(int position) {
+			Subject positionSubject = mSubjects[position];
+			return positionSubject.getSituation();
 		}
 	}
 

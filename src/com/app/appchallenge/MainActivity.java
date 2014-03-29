@@ -68,14 +68,26 @@ public class MainActivity extends SherlockFragmentActivity implements
 
 		Schedule schedule = new Schedule(1, "11:30", "11:50");
 		Schedule schedule1 = new Schedule(2, "11:30", "11:50");
-		Schedule schedule2 = new Schedule(3, "11:30", "11:50");
-		Schedule schedule3 = new Schedule(4, "11:30", "11:50");
 		Schedule schedule4 = new Schedule(4, "11:30", "11:50");
 		
-		Subject subject = new Subject("Algebra superior", "Profesor a",
-				new Schedule[] { schedule, schedule1, schedule2, schedule3, schedule4 });
+		Subject s = new Subject("Algebra superior", "Profesor a",
+				new Schedule[] { schedule, schedule1  }, 1);
+
+		
+		Subject s0 = new Subject("dedeededr", "Profesor a",
+				new Schedule[] { schedule, schedule1, schedule4 }, 0);
+		
+		Subject s2 = new Subject("LOL", "Profesor a",
+				new Schedule[] { schedule, schedule1}, 1);
+
+		Subject s3 = new Subject("dedeededr", "Profesor a",
+				new Schedule[] { schedule, schedule1, schedule4 }, 1);
+
+		Subject s34 = new Subject("dedeededr", "Profesor a",
+				new Schedule[] { schedule, schedule1, schedule4 }, 0);
+		
 		Suggestion suggestion = new Suggestion(" Semestre Enero-Junio 2014",
-				2.5, new Subject[] { subject });
+				2.5, new Subject[] { s, s2, s3, s0, s34 });
 
 		Intent suggestionIntent = new Intent(MainActivity.this,
 				SuggestionActivity.class);

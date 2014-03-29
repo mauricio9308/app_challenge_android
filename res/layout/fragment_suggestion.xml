@@ -18,12 +18,17 @@
         android:text="@string/iam"
         android:textSize="@dimen/text_size_small" />
 
-    <ListView
-        android:id="@android:id/list"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:clipToPadding="false"
-        android:scrollbarStyle="outsideOverlay" />
+    <View
+        style="@style/SeparatorStyle.Horizontal.Title"
+        android:layout_width="wrap_content"
+        android:layout_marginBottom="8dp" />
+
+       <se.emilsjolander.stickylistheaders.StickyListHeadersListView
+            android:id="@android:id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:drawSelectorOnTop="false"
+            android:scrollbarStyle="outsideOverlay" />
 
 </LinearLayout>
