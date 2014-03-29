@@ -22,6 +22,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.app.appchallenge.MainActivity"
+            android:label="@string/main_activity" >
+        </activity>
+        <activity
+            android:name="com.app.appchallenge.SuggestionActivity"
+            android:label="@string/suggestion_activity" >
+        </activity>
     </application>
 
 </manifest>

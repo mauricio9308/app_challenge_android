@@ -15,47 +15,53 @@
         android:text="@string/app_name"
         android:textSize="30sp" />
 
-    <TextView
-        android:id="@+id/txtView_login"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/txtView_app_title"
-        android:layout_marginTop="30dp"
-        android:text="@string/login" />
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/txtView_login"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_marginTop="8dp"
-        android:background="@android:color/darker_gray"
-        android:orientation="vertical"
-        android:padding="16dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp">
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="40dp"
+        android:background="@android:color/black"
+        android:orientation="vertical"
+        android:padding="16dp" >
 
-        <EditText
-            android:id="@+id/edtTxt_username"
+        <TextView
+            android:id="@+id/txtView_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="@string/login"
+            android:textColor="@android:color/white" />
+
+        <EditText
+            android:id="@+id/editTxt_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
             android:hint="@string/hint_username"
-            android:textColorHint="@android:color/white" />
+            android:textColor="@android:color/white" />
 
         <EditText
-            android:id="@+id/edtTxt_password"
-            android:layout_width="wrap_content"
+            android:id="@+id/editTxt_password"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
             android:hint="@string/hint_password"
             android:inputType="textPassword"
-            android:textColorHint="@android:color/white" />
-        
+            android:textColor="@android:color/white" />
+
         <Button
+            android:id="@+id/bttn_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/bttn_login"
-            />
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:text="@string/bttn_login" />
     </LinearLayout>
 
 </RelativeLayout>

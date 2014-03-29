@@ -13,34 +13,43 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/welcome_to_app"
-        android:textSize="30sp" />
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/txtView_set_schedule"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/welcome_to_app" />
+        android:layout_marginTop="8dp"
+        android:text="@string/set_schedule" />
 
     <TextView
         android:id="@+id/txtView_begin_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/begin_time" />
+        android:layout_marginTop="32dp"
+        android:text="@string/begin_time"
+        android:textSize="14sp" />
 
-    <DatePicker
-        android:id="@+id/picker_begin"
+    <TimePicker
+        android:id="@+id/begin_time"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="140dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8dp" />
 
     <TextView
         android:id="@+id/txtView_end_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/end_time" />
-
-    <DatePicker
-        android:id="@+id/picker_end"
+        android:layout_marginTop="16dp"
+        android:text="@string/end_time"
+        android:textSize="14sp" />
+ 
+    <TimePicker
+        android:id="@+id/end_time"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="140dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8dp" />
 
 </LinearLayout>

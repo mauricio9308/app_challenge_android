@@ -6,7 +6,16 @@
         res/values-v11/styles.xml on API 14+ devices.
     -->
     <style name="AppBaseTheme" parent="@style/Theme.Sherlock.Light">
-        <!-- API 14 theme customizations can go here. -->
+        <item name="android:actionBarStyle">@style/MyTheme.ActionBarStyle</item>
+    </style>
+
+    <style name="MyTheme.ActionBarStyle" parent="@style/Widget.Sherlock.Light.ActionBar.Solid">
+        <item name="android:background">#000000</item>
+        <item name="android:titleTextStyle">@style/MyTheme.ActionBar.Text</item>
+    </style>
+
+    <style name="MyTheme.ActionBar.Text" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@android:color/white</item>
     </style>
 
 </resources>

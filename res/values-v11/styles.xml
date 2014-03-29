@@ -5,7 +5,21 @@
         AppBaseTheme from res/values/styles.xml on API 11+ devices.
     -->
     <style name="AppBaseTheme" parent="@style/Theme.Sherlock.Light">
-        <!-- API 11 theme customizations can go here. -->
+        <item name="android:actionBarStyle">@style/MyTheme.ActionBarStyle</item>
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="MyTheme.ActionBarStyle" parent="@style/Widget.Sherlock.Light.ActionBar.Solid">
+        <item name="android:background">#000000</item>
+        <item name="android:titleTextStyle">@style/MyTheme.ActionBar.Text</item>
+    </style>
+
+    <style name="MyTheme.ActionBar.Text" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@android:color/white</item>
     </style>
 
 </resources>

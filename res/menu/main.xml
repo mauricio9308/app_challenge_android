@@ -3,9 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools" >
 
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_submit"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
-        android:showAsAction="never"/>
+        android:icon="@drawable/ic_action_accept"
+        android:title="@string/action_submit"
+        android:showAsAction="ifRoom"/>
 
 </menu>

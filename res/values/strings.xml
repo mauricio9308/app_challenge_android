@@ -3,25 +3,40 @@
 
     <string name="app_name">AppChallenge</string>
     <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
 
-    <!-- Login  -->
+    <!-- Activities -->
+    <string name="main_activity">Selección de horario</string>
+    <string name="suggestion_activity">Sugerencia de horario</string>
+    
+    <!-- Login -->
     <string name="login">Inicio de sesión</string>
     <string name="hint_username">Matrícula</string>
     <string name="hint_password">Password</string>
     <string name="bttn_login">Iniciar sesión</string>
-    
-    
+    <string name="action_submit">Enviar datos</string>
+    <string name="loging_in">Iniciando sesión&#8230;</string>
+
+    <!-- Api errors -->
     <string name="error_no_connection">Imposible contactar al servicio</string>
     <string name="error_server">Error de conexión del servidor</string>
     <string name="error_credentials">Usuario o contraseña incorrectas verifica tus credenciales</string>
-    
+    <string name="error_obtaining_suggestion">Error al obtener la sugerencia</string>
+
     <!-- Main Activity -->
     <string name="carga_academica">Carga académica</string>
     <string name="welcome_to_app">¡Bienvenido a la aplicación de sugerencia de carga académica!</string>
     <string name="set_schedule">Ingresa el horario en el cúal estas libre:</string>
     <string name="begin_time">Hora de inicio:</string>
     <string name="end_time">Hora de final:</string>
-   
-</resources>
+    <string name="obtaining_suggestions">Obteniendo sugerencias&#8230;</string>
+    <string name="verify_the_hours">¡La hora final no puede ser desués de la hora de inicio!</string>
 
+    <!-- Suggestion fragment -->
+    <string name="suggestion_fragment_title">Sugerencia de carga</string>
+    <string name="this_is_your_suggestion">Esta es tu carga sugerida:</string>
+    <string name="iam">IAM:</string>
+
+    <!-- Subject detail fragment -->
+    <string name="professor">Profesor:</string>
+
+</resources>
