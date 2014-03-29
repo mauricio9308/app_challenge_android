@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AppChallenge</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- Login  -->
+    <string name="login">Inicio de sesión</string>
+    <string name="hint_username">Matrícula</string>
+    <string name="hint_password">Password</string>
+    <string name="bttn_login">Iniciar sesión</string>
+    
+    
+    <string name="error_no_connection">Imposible contactar al servicio</string>
+    <string name="error_server">Error de conexión del servidor</string>
+    <string name="error_credentials">Usuario o contraseña incorrectas verifica tus credenciales</string>
+    
+    <!-- Main Activity -->
+    <string name="carga_academica">Carga académica</string>
+    <string name="welcome_to_app">¡Bienvenido a la aplicación de sugerencia de carga académica!</string>
+    <string name="set_schedule">Ingresa el horario en el cúal estas libre:</string>
+    <string name="begin_time">Hora de inicio:</string>
+    <string name="end_time">Hora de final:</string>
+   
+</resources>
+
