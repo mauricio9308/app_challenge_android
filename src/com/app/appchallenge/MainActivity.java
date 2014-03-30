@@ -3,7 +3,6 @@ package com.app.appchallenge;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
-import android.support.v4.app.FragmentManager;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -14,6 +13,8 @@ import com.app.appchallenge.fragment.SubmitRetainFragment;
 import com.app.appchallenge.fragment.SubmitRetainFragment.SubmitCallbacks;
 import com.app.appchallenge.fragment.dialog.LoadingDialogFragment;
 import com.app.appchallenge.model.Hour;
+import com.app.appchallenge.model.Schedule;
+import com.app.appchallenge.model.Subject;
 import com.app.appchallenge.model.Suggestion;
 import com.app.appchallenge.model.User;
 
@@ -80,12 +81,38 @@ public class MainActivity extends SherlockFragmentActivity implements
 			return;
 		}
 
-		SubmitRetainFragment submit = SubmitRetainFragment.newInstance(mUser,
-				beginHour, endHour);
-		FragmentManager man = getSupportFragmentManager();
-		man.beginTransaction().add(submit, FRAG_TAG_SUBMIT_FRAGMENT).commit();
+		 Schedule schedule = new Schedule(1, "11:30", "11:50");
+		 Schedule schedule1 = new Schedule(2, "11:30", "11:50");
+		 Schedule schedule4 = new Schedule(4, "11:30", "11:50");
+		
+		
+		 Subject s0 = new Subject("dedeededr", "Profesor a",
+		 new Schedule[] { schedule, schedule1, schedule4 }, "LOL");
+		
+		 Subject s2 = new Subject("LOL", "Profesor a",
+		 new Schedule[] { schedule, schedule1}, "LOL");
+		
+		 Subject s3 = new Subject("dedeededr", "Profesor a",
+		 new Schedule[] { schedule, schedule1, schedule4 }, "LOL");
+		
+		 Subject s34 = new Subject("dedeededr", "Profesor a",
+		 new Schedule[] { schedule, schedule1, schedule4 }, "LOL");
+		
+		 Suggestion suggestion = new Suggestion(" Semestre Enero-Junio 2014",
+		 2.5, new Subject[] { s2, s3, s0, s34 });
+		
+		 Intent suggestionIntent = new Intent(MainActivity.this,
+		 SuggestionActivity.class);
+		 suggestionIntent.putExtra(SuggestionActivity.INTENT_SUGGESTION,
+		 suggestion);
+		 startActivity(suggestionIntent);
 
-		showFetchingDialog();
+//		SubmitRetainFragment submit = SubmitRetainFragment.newInstance(mUser,
+//				beginHour, endHour);
+//		FragmentManager man = getSupportFragmentManager();
+//		man.beginTransaction().add(submit, FRAG_TAG_SUBMIT_FRAGMENT).commit();
+//
+//		showFetchingDialog();
 	}
 
 	private void showFetchingDialog() {
@@ -95,10 +122,11 @@ public class MainActivity extends SherlockFragmentActivity implements
 		loadingDialog.show(getSupportFragmentManager(),
 				FRAG_TAG_SUBMIT_LOADING_DIALOG);
 	}
-	
-	private void deleteFetchingDialog(){
-		DialogFragment dialog = (DialogFragment) getSupportFragmentManager().findFragmentByTag(FRAG_TAG_SUBMIT_LOADING_DIALOG); 
-		if( dialog != null ){
+
+	private void deleteFetchingDialog() {
+		DialogFragment dialog = (DialogFragment) getSupportFragmentManager()
+				.findFragmentByTag(FRAG_TAG_SUBMIT_LOADING_DIALOG);
+		if (dialog != null) {
 			dialog.dismiss();
 		}
 	}
@@ -114,7 +142,7 @@ public class MainActivity extends SherlockFragmentActivity implements
 		suggestionIntent.putExtra(SuggestionActivity.INTENT_SUGGESTION,
 				suggestion);
 		startActivity(suggestionIntent);
-		
+
 		deleteFetchingDialog();
 	}
 
